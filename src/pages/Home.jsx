@@ -1,7 +1,7 @@
-import Brands from "../../components/Brands";
-import Footer from "../../components/Footer";
-import Banner from "../../header/Banner";
-import Navbar from "../../header/Navbar";
+import Brands from "../components/Brands";
+import Footer from "../components/Footer";
+import Banner from "../header/Banner";
+import Navbar from "../header/Navbar";
 
 const Home = () => {
   return (
