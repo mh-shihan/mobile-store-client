@@ -30,9 +30,10 @@ const Navbar = () => {
       </li>
     </>
   );
+  // fixed top-0 w-full z-10
 
   return (
-    <div className="navbar bg-base-100 bg-opacity-50 px-4 fixed top-0 w-full z-10 shadow-lg py-6">
+    <div className="navbar bg-base-100 bg-opacity-50 px-4  shadow-lg py-6">
       <div className="navbar-start ">
         <div className="dropdown">
           <label
