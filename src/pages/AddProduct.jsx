@@ -12,7 +12,7 @@ const AddProduct = () => {
     const details = form.details.value;
     const photo = form.photo.value;
 
-    const addProduct = {
+    const addedProduct = {
       name,
       brandName,
       type,
@@ -21,14 +21,14 @@ const AddProduct = () => {
       rating,
       photo,
     };
-    console.log(addProduct);
+    console.log(addedProduct);
 
-    fetch("https://coffee-store-server-two-theta.vercel.app/coffee", {
+    fetch("http://localhost:5000/mobiles", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(addProduct),
+      body: JSON.stringify(addedProduct),
     })
       .then((res) => res.json())
       .then((data) => {

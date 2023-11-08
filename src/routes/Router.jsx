@@ -17,7 +17,9 @@ const router = createBrowserRouter([
     path: "/brand/:brandName",
     element: <Mobiles></Mobiles>,
     loader: ({ params }) =>
-      fetch(`http://localhost:5000/mobiles?brandName=${params.brandName}`),
+      fetch(
+        `http://localhost:5000/single-brand-mobile?brandName=${params.brandName}`
+      ),
   },
 ]);
 
