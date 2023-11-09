@@ -57,14 +57,14 @@ const UpdateForm = () => {
     <div>
       <Navbar></Navbar>
       <div className="max-w-7xl mx-auto border shadow-sm mb-10  ">
-        <h1 className="text-5xl font-extrabold my-10 text-center ">
+        <h1 className="text-3xl md:text-5xl font-extrabold my-10 text-center ">
           Update Product
         </h1>
         <form onSubmit={handleUpdate} className="flex justify-center  ">
-          <div className="bg-[#F4F3F0] w-3/4 rounded-xl p-10">
+          <div className="bg-[#F4F3F0] w-full md:w-3/4 rounded-xl p-4 md:p-10 mx-4 md:mx-0">
             {/* Form Row of Name and Available Quantity  */}
-            <div className="md:flex mb-8">
-              <div className="form-control md:w-1/2">
+            <div className="md:flex mb-0 md:mb-8">
+              <div className="form-control w-full md:w-1/2">
                 <label className="label">
                   <span className="label-text text-xl font-bold">
                     Mobile Name
@@ -80,7 +80,7 @@ const UpdateForm = () => {
                   />
                 </label>
               </div>
-              <div className="form-control md:w-1/2 ml-8">
+              <div className="form-control md:w-1/2 ml-0 md:ml-8">
                 <label className="label">
                   <span className="label-text text-xl font-bold">
                     Brand Name
@@ -98,8 +98,8 @@ const UpdateForm = () => {
               </div>
             </div>
             {/* Form Row of Supplier and Taste  */}
-            <div className="md:flex mb-8 ">
-              <div className="form-control md:w-1/2">
+            <div className="md:flex mb-0 md:mb-8 ">
+              <div className="form-control w-full md:w-1/2">
                 <label className="label">
                   <span className="label-text text-xl font-bold">Type</span>
                 </label>
@@ -113,7 +113,7 @@ const UpdateForm = () => {
                   />
                 </label>
               </div>
-              <div className="form-control md:w-1/2 ml-8">
+              <div className="form-control md:w-1/2 ml-0 md:ml-8">
                 <label className="label">
                   <span className="label-text text-xl font-bold">Price</span>
                 </label>
@@ -129,8 +129,8 @@ const UpdateForm = () => {
               </div>
             </div>
             {/* Form Row of Categories and Details  */}
-            <div className="md:flex bg-[#F4F3F0] mb-8  ">
-              <div className="form-control md:w-1/2">
+            <div className="md:flex bg-[#F4F3F0] mb-0 md:mb-8  ">
+              <div className="form-control w-full md:w-1/2">
                 <label className="label">
                   <span className="label-text text-xl font-bold">Rating</span>
                 </label>
@@ -144,7 +144,7 @@ const UpdateForm = () => {
                   />
                 </label>
               </div>
-              <div className="form-control md:w-1/2 ml-8">
+              <div className="form-control md:w-1/2 ml-0 md:ml-8">
                 <label className="label">
                   <span className="label-text text-xl font-bold">Details</span>
                 </label>

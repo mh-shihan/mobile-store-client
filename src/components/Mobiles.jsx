@@ -1,6 +1,6 @@
 import { Carousel, IconButton } from "@material-tailwind/react";
 import Navbar from "../header/Navbar";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { useState } from "react";
 import MobileCard from "./MobileCard";
 
@@ -86,6 +86,22 @@ export const Mobiles = () => {
         </span>{" "}
         Collection
       </h2>
+      <div className="mt-10">
+        {loadedMobiles.length === 0 && (
+          <div>
+            <h2 className="text-3xl space-y-5 font-bold text-center">
+              Sorry!! No Mobile Found
+            </h2>
+            <div className="text-center my-5">
+              <Link to="/addProduct">
+                <button className="btn hover:text-gray-900 bg-blue-600 border-blue-600 text-base-100">
+                  Add Mobile
+                </button>
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mt-10">
         {mobiles.map((mobile) => (
           <MobileCard

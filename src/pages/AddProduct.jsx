@@ -54,10 +54,10 @@ const AddProduct = () => {
           Add Product
         </h1>
         <form onSubmit={handleAddProduct} className="flex justify-center  ">
-          <div className="bg-[#F4F3F0] w-3/4 rounded-xl p-10">
+          <div className="bg-[#F4F3F0] w-full md:w-3/4 rounded-xl  px-4 md:px-10 ">
             {/* Form Row of Name and Available Quantity  */}
-            <div className="md:flex mb-8">
-              <div className="form-control md:w-1/2">
+            <div className="md:flex mb-0 md:mb-8">
+              <div className="form-control w-full md:w-1/2">
                 <label className="label">
                   <span className="label-text text-xl font-bold">
                     Mobile Name
@@ -72,7 +72,7 @@ const AddProduct = () => {
                   />
                 </label>
               </div>
-              <div className="form-control md:w-1/2 ml-8">
+              <div className="form-control w-full md:w-1/2 ml-0 md:ml-8">
                 <label className="label">
                   <span className="label-text text-xl font-bold">
                     Brand Name
@@ -89,7 +89,7 @@ const AddProduct = () => {
               </div>
             </div>
             {/* Form Row of Supplier and Taste  */}
-            <div className="md:flex mb-8 ">
+            <div className="md:flex mb-0 md:mb-8 ">
               <div className="form-control md:w-1/2">
                 <label className="label">
                   <span className="label-text text-xl font-bold">Type</span>
@@ -103,7 +103,7 @@ const AddProduct = () => {
                   />
                 </label>
               </div>
-              <div className="form-control md:w-1/2 ml-8">
+              <div className="form-control md:w-1/2 ml-0 md:ml-8">
                 <label className="label">
                   <span className="label-text text-xl font-bold">Price</span>
                 </label>
@@ -118,7 +118,7 @@ const AddProduct = () => {
               </div>
             </div>
             {/* Form Row of Categories and Details  */}
-            <div className="md:flex bg-[#F4F3F0] mb-8  ">
+            <div className="md:flex bg-[#F4F3F0] mb-0 md:mb-8  ">
               <div className="form-control md:w-1/2">
                 <label className="label">
                   <span className="label-text text-xl font-bold">Rating</span>
@@ -132,7 +132,7 @@ const AddProduct = () => {
                   />
                 </label>
               </div>
-              <div className="form-control md:w-1/2 ml-8">
+              <div className="form-control md:w-1/2 ml-0 md:ml-8">
                 <label className="label">
                   <span className="label-text text-xl font-bold">Details</span>
                 </label>

@@ -16,7 +16,7 @@ const Home = () => {
         </section>
       </header>
 
-      <main className="max-w-7xl mx-auto">
+      <main className="max-w-7xl mx-4 md:mx-auto ">
         <section>
           <Brands></Brands>
         </section>

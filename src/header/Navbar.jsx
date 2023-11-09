@@ -34,12 +34,12 @@ const Navbar = () => {
   // fixed top-0 w-full z-10
 
   return (
-    <div className="navbar bg-base-100 bg-opacity-50 px-4 max-w-7xl mx-auto shadow-lg py-6">
-      <div className="navbar-start ">
+    <div className="navbar bg-base-100 bg-opacity-50 px-0 md:px-4 max-w-7xl mx-auto shadow-lg py-6">
+      <div className="navbar-start  ">
         <div className="dropdown">
           <label
             tabIndex={0}
-            className="btn btn-ghost text-blue-600 font-bold mr-10 lg:hidden"
+            className="btn btn-ghost text-blue-600 font-bold mr-0 md:mr-10 lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -75,15 +75,17 @@ const Navbar = () => {
       </div>
       <div className="navbar-end flex flex-col md:flex-row ml-8">
         <img className="h-8 w-8 mr-2 rounded-full" alt="" />
-        <div>
+        <div className="">
           {user ? (
-            <div className="flex flex-col-reverse xl:flex-row ">
-              <p className=" text-xs md:text-base">{user?.email}</p>
+            <div className="flex flex-col-reverse xl:flex-row items-center justify-center mt-2 md:mt-0 ">
+              <p className=" text-xs md:text-base break-all text-center">
+                {user?.email}
+              </p>
               <button
                 onClick={handleLogOut}
-                className=" md:btn-sm text-sm md:text-lg  px-1  rounded-md  mx-auto font-medium bg-blue-600 text-white ml-5 md:ml-2 flex items-center"
+                className=" md:btn-sm text-sm md:text-lg  px-1   rounded-md block  mx-auto font-medium bg-blue-600 text-white ml-10 md:ml-2 "
               >
-                <p>Sign Out</p>
+                Sign Out
               </button>
             </div>
           ) : (
