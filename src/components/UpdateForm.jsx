@@ -1,7 +1,14 @@
+import { useLoaderData } from "react-router-dom";
 import Navbar from "../header/Navbar";
 import Swal from "sweetalert2";
-const AddProduct = () => {
-  const handleAddProduct = (e) => {
+
+const UpdateForm = () => {
+  const loadedData = useLoaderData();
+  const { _id, name, brandName, type, price, details, rating, photo } =
+    loadedData;
+  console.log(loadedData);
+
+  const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -22,9 +29,8 @@ const AddProduct = () => {
       photo,
     };
     console.log(addedProduct);
-
-    fetch("http://localhost:5000/mobiles", {
-      method: "POST",
+    fetch(`http://localhost:5000/mobiles/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -33,7 +39,7 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
             text: "Phone added successfully",
@@ -46,14 +52,15 @@ const AddProduct = () => {
         console.log("Error", error);
       });
   };
+
   return (
     <div>
       <Navbar></Navbar>
       <div className="max-w-7xl mx-auto border shadow-sm mb-10  ">
         <h1 className="text-5xl font-extrabold my-10 text-center ">
-          Add Product
+          Update Product
         </h1>
-        <form onSubmit={handleAddProduct} className="flex justify-center  ">
+        <form onSubmit={handleUpdate} className="flex justify-center  ">
           <div className="bg-[#F4F3F0] w-3/4 rounded-xl p-10">
             {/* Form Row of Name and Available Quantity  */}
             <div className="md:flex mb-8">
@@ -66,6 +73,7 @@ const AddProduct = () => {
                 <label className="input-group">
                   <input
                     type="text"
+                    defaultValue={name}
                     placeholder="Mobile Name"
                     name="name"
                     className="input input-bordered w-full"
@@ -81,6 +89,7 @@ const AddProduct = () => {
                 <label className="input-group">
                   <input
                     type="text"
+                    defaultValue={brandName}
                     placeholder="Brand Name"
                     name="brandName"
                     className="input input-bordered w-full"
@@ -97,6 +106,7 @@ const AddProduct = () => {
                 <label className="input-group">
                   <input
                     type="text"
+                    defaultValue={type}
                     placeholder="type"
                     name="type"
                     className="input input-bordered w-full"
@@ -110,6 +120,7 @@ const AddProduct = () => {
                 <label className="input-group">
                   <input
                     type="text"
+                    defaultValue={price}
                     placeholder="price"
                     name="price"
                     className="input input-bordered w-full"
@@ -126,6 +137,7 @@ const AddProduct = () => {
                 <label className="input-group">
                   <input
                     type="text"
+                    defaultValue={rating}
                     placeholder="rating"
                     name="rating"
                     className="input input-bordered w-full"
@@ -139,6 +151,7 @@ const AddProduct = () => {
                 <label className="input-group">
                   <input
                     type="text"
+                    defaultValue={details}
                     placeholder="details"
                     name="details"
                     className="input input-bordered w-full"
@@ -155,6 +168,7 @@ const AddProduct = () => {
                 <label className="input-group">
                   <input
                     type="text"
+                    defaultValue={photo}
                     placeholder="Photo URL"
                     name="photo"
                     className="input input-bordered w-full"
@@ -166,7 +180,7 @@ const AddProduct = () => {
             <div>
               <input
                 type="submit"
-                value="Add Product"
+                value="Update Product"
                 className="btn btn-block bg-blue-600 text-white hover:text-black font-bold "
               />
             </div>
@@ -177,4 +191,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default UpdateForm;

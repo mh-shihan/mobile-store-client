@@ -80,7 +80,12 @@ export const Mobiles = () => {
           />
         </Carousel>
       </div>
-      <h2 className="mt-10 text-4xl text-center font-extrabold">{brandName}</h2>
+      <h2 className="mt-10 text-4xl text-center font-extrabold">
+        <span className="text-blue-600 font-extrabold text-5xl">
+          {brandName}
+        </span>{" "}
+        Collection
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mt-10">
         {mobiles.map((mobile) => (
           <MobileCard

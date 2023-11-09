@@ -1,8 +1,9 @@
-// import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
-  //   const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logOut()
@@ -23,22 +24,22 @@ const Navbar = () => {
         <NavLink to="/addProduct">Add Product</NavLink>
       </li>
       <li className="font-semibold text-lg ">
-        <NavLink to="/login">My Cart</NavLink>
+        <NavLink to="/myCart">My Cart</NavLink>
       </li>
       <li className="font-semibold text-lg ">
-        <NavLink to="/classSchedule">Login</NavLink>
+        <NavLink to="/login">Login</NavLink>
       </li>
     </>
   );
   // fixed top-0 w-full z-10
 
   return (
-    <div className="navbar bg-base-100 bg-opacity-50 px-4  shadow-lg py-6">
+    <div className="navbar bg-base-100 bg-opacity-50 px-4 max-w-7xl mx-auto shadow-lg py-6">
       <div className="navbar-start ">
         <div className="dropdown">
           <label
             tabIndex={0}
-            className="btn btn-ghost text-orange-500 font-bold mr-10 lg:hidden"
+            className="btn btn-ghost text-blue-600 font-bold mr-10 lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -74,25 +75,25 @@ const Navbar = () => {
       </div>
       <div className="navbar-end flex flex-col md:flex-row ml-8">
         <img className="h-8 w-8 mr-2 rounded-full" alt="" />
-        {/* <div>
+        <div>
           {user ? (
             <div className="flex flex-col-reverse xl:flex-row ">
               <p className=" text-xs md:text-base">{user?.email}</p>
               <button
                 onClick={handleLogOut}
-                className=" md:btn-sm text-sm md:text-lg  px-1 rounded-md block mx-auto font-medium bg-orange-500 text-white ml-5 md:ml-2"
+                className=" md:btn-sm text-sm md:text-lg  px-1  rounded-md  mx-auto font-medium bg-blue-600 text-white ml-5 md:ml-2 flex items-center"
               >
-                Sign Out
+                <p>Sign Out</p>
               </button>
             </div>
           ) : (
-            <Link to="/registration">
-              <button className="btn btn-sm bg-orange-500 text-white ml-2">
-                Join Us
+            <Link to="/register">
+              <button className="btn btn-sm bg-blue-600 text-white ml-2">
+                Register
               </button>
             </Link>
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );
