@@ -1,3 +1,4 @@
+import About from "../components/About";
 import Brands from "../components/Brands";
 import Footer from "../components/Footer";
 import Banner from "../header/Banner";
@@ -20,14 +21,14 @@ const Home = () => {
         <section>
           <Brands></Brands>
         </section>
-        <section className="mt-20 h-[500px] w-full bg-base-300 rounded-lg flex justify-center items-center">
-          <h1 className="text-3xl font-bold">Extra Section 1</h1>
+        <section className=" mt-20 border-blue-500 shadow-lg">
+          <About></About>
         </section>
         <section className="mt-20 h-[500px] w-full bg-base-300 rounded-lg flex justify-center items-center">
           <h1 className="text-3xl font-bold">Extra Section 1</h1>
         </section>
       </main>
-      <footer className="mt-4">
+      <footer className="mt-4 ">
         <Footer></Footer>
       </footer>
     </div>

@@ -3,17 +3,17 @@ const Footer = () => {
     <footer className="footer p-10 bg-base-200 shadow-inner text-base-content grid grid-cols-2 md:grid-cols-3">
       <nav>
         {/* todo :: there is something to be done */}
-        <header className="footer-title">Services</header>
-        <a className="link link-hover">Body Building</a>
-        <a className="link link-hover">Weight Lifting</a>
-        <a className="link link-hover">Weight Loss</a>
-        <a className="link link-hover">Muscle Gain</a>
+        <header className="footer-title">Brands</header>
+        <a className="link link-hover">Apple</a>
+        <a className="link link-hover">Samsung</a>
+        <a className="link link-hover">Google</a>
+        <a className="link link-hover">Nokia</a>
       </nav>
       <nav>
         <header className="footer-title">Company</header>
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
+        <a className="link link-hover">Cart</a>
         <a className="link link-hover">Press kit</a>
       </nav>
       <nav>

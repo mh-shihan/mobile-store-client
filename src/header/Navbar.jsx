@@ -5,16 +5,6 @@ import { useContext } from "react";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
-  const handleLogOut = () => {
-    logOut()
-      .then((res) => {
-        console.log(res.user);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
   const navLinks = (
     <>
       <li className="font-semibold text-lg">
@@ -31,7 +21,44 @@ const Navbar = () => {
       </li>
     </>
   );
+
   // fixed top-0 w-full z-10
+
+  const profile = (
+    <div className="flex items-center gap-2">
+      {/* <div className="bg-stone-300 p-2 rounded-lg shadow">
+        {user?.credit} 🪙
+      </div> */}
+      <div
+        className="tooltip tooltip-left tooltip-accent"
+        data-tip={`${user?.displayName}`}
+      >
+        {" "}
+        <div>
+          <div>
+            {user?.photoURL ? (
+              <img
+                src={user?.photoURL}
+                alt=""
+                className=" w-10 h-10 border bg-opacity-75  border-blue-600 p-[2px] rounded-full"
+              />
+            ) : (
+              <p className="break-all text-blue-600 font-light border rounded-lg">
+                {user?.displayName}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <button
+        onClick={logOut}
+        className="btn btn-accent btn-sm text-white bg-blue-600 border-blue-600"
+      >
+        Log Out
+      </button>
+    </div>
+  );
 
   return (
     <div className="navbar bg-base-100 bg-opacity-50 px-0 md:px-4 max-w-7xl mx-auto shadow-lg py-6">
@@ -73,21 +100,11 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 ">{navLinks}</ul>
       </div>
+
       <div className="navbar-end flex flex-col md:flex-row ml-8">
-        <img className="h-8 w-8 mr-2 rounded-full" alt="" />
         <div className="">
           {user ? (
-            <div className="flex flex-col-reverse xl:flex-row items-center justify-center mt-2 md:mt-0 ">
-              <p className=" text-xs md:text-base break-all text-center">
-                {user?.email}
-              </p>
-              <button
-                onClick={handleLogOut}
-                className=" md:btn-sm text-sm md:text-lg  px-1   rounded-md block  mx-auto font-medium bg-blue-600 text-white ml-10 md:ml-2 "
-              >
-                Sign Out
-              </button>
-            </div>
+            <div>{profile}</div>
           ) : (
             <Link to="/register">
               <button className="btn btn-sm bg-blue-600 text-white ml-2">

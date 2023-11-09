@@ -4,6 +4,7 @@ import { AuthContext } from "../providers/AuthProvider";
 // import swal from "sweetalert";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import Navbar from "../header/Navbar";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,14 +18,15 @@ const Registration = () => {
     nameRef?.current?.focus();
   }, []);
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUser, setUser } = useContext(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     const name = e.target.name.value;
-    console.log(name, email, password);
+    const image_url = e.target.image_url.value;
+    console.log(name, email, password, image_url);
 
     // Password Requirement
 
@@ -53,7 +55,18 @@ const Registration = () => {
     // Create User Function
     createUser(email, password)
       .then((res) => {
-        console.log(res.user);
+        const loggedUser = res.user;
+        console.log(loggedUser);
+        updateUser({
+          displayName: name,
+          photoURL: image_url,
+        }).then(() => {
+          setUser({
+            ...loggedUser,
+            displayName: name,
+            photoURL: image_url,
+          });
+        });
         e.target.reset();
         navigate("/");
         setSuccessMessage(
@@ -68,76 +81,90 @@ const Registration = () => {
       });
   };
   return (
-    <div className="xl:hero bg-base-200">
-      <div className="hero-content xl:w-1/2 flex-col lg:flex-col">
-        <div className="text-center lg:text-left">
-          <h1 className="text-3xl xl:text-5xl font-bold text-blue-600">
-            Register now!
-          </h1>
-        </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleRegister} className="card-body">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
-              <input
-                type="text"
-                ref={nameRef}
-                name="name"
-                placeholder="Name"
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <div className="relative">
+    <div>
+      <Navbar></Navbar>
+      <div className="xl:hero bg-base-200 ">
+        <div className="hero-content xl:w-1/2 flex-col lg:flex-col">
+          <div className="text-center lg:text-left">
+            <h1 className="text-3xl xl:text-5xl font-bold text-blue-600 mt-6">
+              Register now!
+            </h1>
+          </div>
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <form onSubmit={handleRegister} className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
                 <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  name="password"
-                  className="input input-bordered w-full"
+                  type="text"
+                  ref={nameRef}
+                  name="name"
+                  placeholder="Name"
+                  className="input input-bordered"
                   required
                 />
-                <span
-                  className="cursor-pointer absolute bottom-[37%] right-[3%]"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
-                  {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
-                </span>
               </div>
-            </div>
-            <div className="form-control mt-6">
-              <button className="btn bg-blue-600 text-white text-xl xl:text-2xl">
-                Register
-              </button>
-            </div>
-            <p>
-              Already have account. Please{" "}
-              <Link className="text-blue-600" to="/login">
-                Login
-              </Link>
-            </p>
-            {errorMessage && <p className="text-red-500">{errorMessage}</p>}
-            {successMessage && (
-              <p className="text-green-600">{successMessage}</p>
-            )}
-          </form>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Email</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Image URL</span>
+                </label>
+                <input
+                  type="text"
+                  name="image_url"
+                  placeholder="Image URL"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Password</span>
+                </label>
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    name="password"
+                    className="input input-bordered w-full"
+                    required
+                  />
+                  <span
+                    className="cursor-pointer absolute bottom-[37%] right-[3%]"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                  </span>
+                </div>
+              </div>
+              <div className="form-control mt-6">
+                <button className="btn bg-blue-600 text-white text-xl xl:text-2xl">
+                  Register
+                </button>
+              </div>
+              <p>
+                Already have account. Please{" "}
+                <Link className="text-blue-600" to="/login">
+                  Login
+                </Link>
+              </p>
+              {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+              {successMessage && (
+                <p className="text-green-600">{successMessage}</p>
+              )}
+            </form>
+          </div>
         </div>
       </div>
     </div>
