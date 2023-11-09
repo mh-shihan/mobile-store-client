@@ -10,7 +10,8 @@ const MyCart = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <Navbar></Navbar>
-      <h2 className="mt-10 text-3xl font-bold mb-4 ml-4">
+
+      <h2 className="mt-24 text-3xl font-bold mb-4 ml-4 ">
         Total Cart Products : {cartData.length}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

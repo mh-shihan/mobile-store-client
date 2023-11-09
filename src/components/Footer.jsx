@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-base-200 shadow-inner text-base-content grid grid-cols-2 md:grid-cols-3">
-      <nav>
+    <footer className="footer p-10 bg-gray-300 shadow-inner text-base-content grid grid-cols-2 md:grid-cols-3">
+      <nav className="text-gray-800">
         {/* todo :: there is something to be done */}
         <header className="footer-title">Brands</header>
         <a className="link link-hover">Apple</a>
@@ -9,7 +9,7 @@ const Footer = () => {
         <a className="link link-hover">Google</a>
         <a className="link link-hover">Nokia</a>
       </nav>
-      <nav>
+      <nav className="text-gray-800">
         <header className="footer-title">Company</header>
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>

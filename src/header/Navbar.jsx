@@ -61,7 +61,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 bg-opacity-50 px-0 md:px-4 max-w-7xl mx-auto shadow-lg py-6">
+    <div className="navbar bg-base-100 mb-16 bg-opacity-50 px-0 md:px-4 max-w-7xl mx-auto shadow-lg py-3 fixed top-0 w-full z-10">
       <div className="navbar-start  ">
         <div className="dropdown">
           <label
@@ -107,7 +107,7 @@ const Navbar = () => {
             <div>{profile}</div>
           ) : (
             <Link to="/register">
-              <button className="btn btn-sm bg-blue-600 text-white ml-2">
+              <button className="btn btn-sm bg-blue-600 border-blue-600 text-white ml-2">
                 Register
               </button>
             </Link>

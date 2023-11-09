@@ -83,7 +83,7 @@ const Registration = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="xl:hero bg-base-200 ">
+      <div className="xl:hero bg-base-200 mt-20 ">
         <div className="hero-content xl:w-1/2 flex-col lg:flex-col">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl xl:text-5xl font-bold text-blue-600 mt-6">
