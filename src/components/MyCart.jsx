@@ -7,7 +7,9 @@ const MyCart = () => {
   const { user } = useContext(AuthContext);
   const [cartData, setCartData] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/myCarts?email=${user?.email}`)
+    fetch(
+      `https://mobile-store-server-rust.vercel.app/myCarts?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

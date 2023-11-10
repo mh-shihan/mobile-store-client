@@ -27,7 +27,7 @@ const UpdateForm = () => {
       photo,
     };
     console.log(addedProduct);
-    fetch(`http://localhost:5000/mobiles/${_id}`, {
+    fetch(`https://mobile-store-server-rust.vercel.app/mobiles/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

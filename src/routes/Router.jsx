@@ -20,7 +20,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/brands"),
+        loader: () =>
+          fetch("https://mobile-store-server-rust.vercel.app/brands"),
       },
       {
         path: "/addProduct",
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
         element: <Mobiles></Mobiles>,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/single-brand-mobile?brandName=${params.brandName}`
+            `https://mobile-store-server-rust.vercel.app/single-brand-mobile?brandName=${params.brandName}`
           ),
       },
       {
@@ -46,7 +47,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/mobiles/${params.id}`),
+          fetch(
+            `https://mobile-store-server-rust.vercel.app/mobiles/${params.id}`
+          ),
       },
       {
         path: "/myCart",
@@ -64,7 +67,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/mobiles/${params.id}`),
+          fetch(
+            `https://mobile-store-server-rust.vercel.app/mobiles/${params.id}`
+          ),
       },
       {
         path: "/register",

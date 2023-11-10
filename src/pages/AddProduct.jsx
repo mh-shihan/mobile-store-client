@@ -23,7 +23,7 @@ const AddProduct = () => {
     };
     console.log(addedProduct);
 
-    fetch("http://localhost:5000/mobiles", {
+    fetch("https://mobile-store-server-rust.vercel.app/mobiles", {
       method: "POST",
       headers: {
         "content-type": "application/json",
