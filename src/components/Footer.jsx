@@ -2,7 +2,6 @@ const Footer = () => {
   return (
     <footer className="footer p-10 bg-gray-300 shadow-inner text-base-content grid grid-cols-2 md:grid-cols-3">
       <nav className="text-gray-800">
-        {/* todo :: there is something to be done */}
         <header className="footer-title">Brands</header>
         <a className="link link-hover">Apple</a>
         <a className="link link-hover">Samsung</a>

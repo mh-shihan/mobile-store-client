@@ -12,8 +12,9 @@ const Banner = () => {
       <div className="hero-overlay bg-opacity-20"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
-          {/* todo :: The is some design to made */}
-          <h1 className="mb-5 text-5xl font-bold text-base-200">HELLO THERE</h1>
+          <h1 className="mb-5 text-3xl md:text-5xl mt-24 md:mt-24 lg:mt-0 font-bold text-base-200">
+            HELLO THERE
+          </h1>
           <p className="mb-5 text-base-100">
             Welcome to Mobile Store, your one-stop destination for cutting-edge
             smartphones! Explore the latest innovations from top brands like

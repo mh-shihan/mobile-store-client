@@ -3,8 +3,8 @@ import TextBox from "../utilities/TextBox";
 
 const Contact = () => {
   return (
-    <div className="flex gap-4 shadow-lg p-4 mb-10">
-      <div className="w-2/5">
+    <div className="flex flex-col md:flex-row gap-4 shadow-lg p-4 mb-10">
+      <div className="w-full md:w-2/5">
         <h2 className="text-3xl font-bold mb-4">Contact Info</h2>
         <p className="text-gray-600 text-sm mb-4">
           Have questions or ready to make your tech upgrade? Reach out to us at

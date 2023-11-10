@@ -1,11 +1,19 @@
-import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import MyCard from "./MyCard";
 import Navbar from "../header/Navbar";
+import { AuthContext } from "../providers/AuthProvider";
 
 const MyCart = () => {
-  const loadedCartData = useLoaderData();
-  const [cartData, setCartData] = useState(loadedCartData);
+  const { user } = useContext(AuthContext);
+  const [cartData, setCartData] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/myCarts?email=${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setCartData(data);
+      });
+  }, [user]);
 
   return (
     <div className="max-w-7xl mx-auto">

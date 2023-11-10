@@ -5,8 +5,8 @@ const MyCard = (params = {}) => {
   const { cart, cartData, setCartData } = params || {};
   const { _id, name, brandName, price, details, rating, photo } = cart;
 
-  const handleRemove = (_id) => {
-    console.log(_id);
+  const handleRemove = (id) => {
+    console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -17,7 +17,7 @@ const MyCard = (params = {}) => {
       confirmButtonText: "Yes, remove it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/addToCarts/${_id}`, {
+        fetch(`http://localhost:5000/cart/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -25,7 +25,7 @@ const MyCard = (params = {}) => {
             console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
-              const remaining = cartData.filter((cart) => cart._id !== _id);
+              const remaining = cartData.filter((cart) => cart._id !== id);
               setCartData(remaining);
             }
           });

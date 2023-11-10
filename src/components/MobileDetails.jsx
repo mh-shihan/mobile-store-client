@@ -1,20 +1,35 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../header/Navbar";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const MobileDetails = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const mobileDetails = useLoaderData();
   const { _id, name, brandName, type, price, details, rating, photo } =
     mobileDetails;
   //   console.log(mobileDetails);
-  const handleAddToCart = (_id) => {
+  const handleAddToCart = () => {
     console.log(_id);
+    const myCartMobile = {
+      name,
+      brandName,
+      type,
+      price,
+      details,
+      rating,
+      photo,
+      ownerEmail: user?.email,
+      mobileId: _id,
+    };
     fetch("http://localhost:5000/addToCarts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(mobileDetails),
+      body: JSON.stringify(myCartMobile),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -32,7 +47,6 @@ const MobileDetails = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <h1></h1>
       <div className="flex justify-center mt-32 mx-4 mb-10 ">
         <div className="relative flex flex-col md:flex-row w-full max-w-[48rem]  rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
           <div className="relative w-full md:w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
