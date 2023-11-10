@@ -1,12 +1,27 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { useContext } from "react";
+import { ThemeContext } from "../providers/ThemeProvider";
+import { HiSun, HiMoon } from "react-icons/hi2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const { darkMode, lightMode, theme } = useContext(ThemeContext);
 
   const navLinks = (
     <>
+      <div className="cursor-pointer">
+        {theme == "light" && (
+          <div onClick={darkMode} className="bg-stone-100 p-3">
+            <HiMoon></HiMoon>
+          </div>
+        )}
+        {theme == "dark" && (
+          <div onClick={lightMode} className="bg-stone-100 p-3">
+            <HiSun></HiSun>
+          </div>
+        )}
+      </div>
       <li className="font-semibold text-lg">
         <NavLink to="/">Home</NavLink>
       </li>

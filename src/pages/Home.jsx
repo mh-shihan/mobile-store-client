@@ -12,8 +12,7 @@ const Home = () => {
         <nav>
           <Navbar></Navbar>
         </nav>
-
-        <section>
+        <section data-aos="fade-up">
           <Banner></Banner>
         </section>
       </header>

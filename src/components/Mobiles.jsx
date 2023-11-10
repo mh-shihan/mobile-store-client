@@ -11,7 +11,7 @@ export const Mobiles = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="max-w-7xl mx-auto h-[70vh] mt-10">
+      <div className="max-w-7xl mx-auto h-[70vh] mt-32">
         <Carousel
           className="rounded-xl"
           prevArrow={({ handlePrev }) => (

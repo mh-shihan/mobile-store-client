@@ -12,7 +12,6 @@ const UpdateForm = () => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
-    const brandName = form.brandName.value;
     const rating = form.rating.value;
     const type = form.type.value;
     const price = form.price.value;
@@ -21,7 +20,6 @@ const UpdateForm = () => {
 
     const addedProduct = {
       name,
-      brandName,
       type,
       price,
       details,
