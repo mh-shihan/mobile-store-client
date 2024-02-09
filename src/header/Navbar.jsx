@@ -48,7 +48,6 @@ const Navbar = () => {
         className="tooltip tooltip-left tooltip-accent"
         data-tip={`${user?.displayName}`}
       >
-        {" "}
         <div>
           <div>
             {user?.photoURL ? (
