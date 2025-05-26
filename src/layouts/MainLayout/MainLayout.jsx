@@ -7,9 +7,9 @@ const MainLayout = () => {
     Aos.init();
   }, []);
   return (
-    <div>
+    <div className="scroll-smooth">
       <UpdatedNavbar></UpdatedNavbar>
-      <div className="max-w-7xl mx-auto px-3">
+      <div className="max-w-7xl mx-auto px-3 pt-20">
         <Outlet></Outlet>
       </div>
     </div>

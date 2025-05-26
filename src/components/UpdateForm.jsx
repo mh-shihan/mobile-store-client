@@ -53,7 +53,7 @@ const UpdateForm = () => {
 
   return (
     <div>
-      <div className="max-w-7xl mx-auto border shadow-sm mb-10 mt-20  ">
+      <div className="max-w-7xl mx-auto border shadow-sm mb-10 mt-20">
         <h1 className="text-3xl md:text-5xl font-extrabold my-10 text-center ">
           Update Product
         </h1>

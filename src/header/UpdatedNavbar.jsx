@@ -1,9 +1,26 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") || "light"
+  );
+
+  const handleToggelTheme = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
 
   const navLinks = (
     <>
@@ -21,8 +38,6 @@ const Navbar = () => {
       </li>
     </>
   );
-
-  // fixed top-0 w-full z-10
 
   const profile = (
     <div className="flex items-center gap-2">
@@ -90,7 +105,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className=" normal-case md:text-5xl ">
+          <a href="/" className=" normal-case md:text-5xl ">
             <p>
               <span className="text-blue-600 font-bold">Mobile</span>
               <span className="font-light">Store</span>
@@ -103,8 +118,10 @@ const Navbar = () => {
           <label className="toggle text-base-content">
             <input
               type="checkbox"
-              value="synthwave"
               className="theme-controller"
+              value={theme}
+              onChange={handleToggelTheme}
+              checked={theme === "dark"}
             />
 
             <svg

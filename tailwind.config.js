@@ -6,4 +6,7 @@ export default module.exports = withMT({
     extend: {},
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
 });

@@ -17,7 +17,7 @@ const ThemeProvider = (props = {}) => {
   };
   return (
     <ThemeContext.Provider value={{ darkMode, lightMode, theme, setTheme }}>
-      <div data-theme={theme}>{children}</div>;
+      <div data-theme={theme}>{children}</div>
     </ThemeContext.Provider>
   );
 };
