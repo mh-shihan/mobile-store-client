@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import MyCard from "./MyCard";
-import Navbar from "../header/Navbar";
+
 import { AuthContext } from "../providers/AuthProvider";
 
 const MyCart = () => {
@@ -19,8 +19,6 @@ const MyCart = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <Navbar></Navbar>
-
       <h2 className="mt-24 text-3xl font-bold mb-4 ml-4 ">
         Total Cart Products : {cartData.length}
       </h2>

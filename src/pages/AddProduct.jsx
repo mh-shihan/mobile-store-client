@@ -1,4 +1,3 @@
-import Navbar from "../header/Navbar";
 import Swal from "sweetalert2";
 const AddProduct = () => {
   const handleAddProduct = (e) => {
@@ -48,7 +47,6 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <Navbar></Navbar>
       <div className="max-w-7xl mx-auto border border-t-transparent shadow-sm mb-10 mt-20  ">
         <h1 className="text-5xl font-extrabold my-10 text-center ">
           Add Product

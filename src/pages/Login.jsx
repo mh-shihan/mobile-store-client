@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
-import Navbar from "../header/Navbar";
 
 const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -59,7 +58,6 @@ const Login = () => {
   };
   return (
     <div>
-      <Navbar></Navbar>
       <div className="xl:hero bg-base-200 mt-20">
         <div className="hero-content xl:w-1/2 flex-col lg:flex-col">
           <div className="text-center lg:text-left">

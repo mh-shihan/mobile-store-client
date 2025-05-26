@@ -1,5 +1,5 @@
 import { Carousel, IconButton } from "@material-tailwind/react";
-import Navbar from "../header/Navbar";
+
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { useState } from "react";
 import MobileCard from "./MobileCard";
@@ -10,7 +10,6 @@ export const Mobiles = () => {
   const { brandName } = useParams();
   return (
     <div>
-      <Navbar></Navbar>
       <div className="max-w-7xl mx-auto h-[70vh] mt-32">
         <Carousel
           className="rounded-xl"

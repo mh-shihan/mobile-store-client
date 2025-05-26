@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import Navbar from "../header/Navbar";
+
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
@@ -46,7 +46,6 @@ const MobileDetails = () => {
   };
   return (
     <div>
-      <Navbar></Navbar>
       <div className="flex justify-center mt-32 mx-4 mb-10 ">
         <div className="relative flex flex-col md:flex-row w-full max-w-[48rem]  rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
           <div className="relative w-full md:w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">

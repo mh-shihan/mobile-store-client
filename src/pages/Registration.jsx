@@ -4,7 +4,6 @@ import { AuthContext } from "../providers/AuthProvider";
 // import swal from "sweetalert";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
-import Navbar from "../header/Navbar";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -82,7 +81,6 @@ const Registration = () => {
   };
   return (
     <div>
-      <Navbar></Navbar>
       <div className="xl:hero bg-base-200 mt-20 ">
         <div className="hero-content xl:w-1/2 flex-col lg:flex-col">
           <div className="text-center lg:text-left">

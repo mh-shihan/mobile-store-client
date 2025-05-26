@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import Navbar from "../header/Navbar";
+
 import Swal from "sweetalert2";
 
 const UpdateForm = () => {
@@ -53,7 +53,6 @@ const UpdateForm = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
       <div className="max-w-7xl mx-auto border shadow-sm mb-10 mt-20  ">
         <h1 className="text-3xl md:text-5xl font-extrabold my-10 text-center ">
           Update Product
