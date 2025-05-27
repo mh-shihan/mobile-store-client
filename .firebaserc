@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "mobile-store-86411"
-  }
+    "default": "my-mobile-store-17986",
+    "prod": "my-mobile-store-17986"
+  },
+  "targets": {},
+  "etags": {}
 }

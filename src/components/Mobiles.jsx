@@ -10,7 +10,7 @@ export const Mobiles = () => {
   const { brandName } = useParams();
   return (
     <div>
-      <div className="max-w-7xl mx-auto h-[70vh] mt-32">
+      <div className="max-w-7xl mx-auto h-[70vh] mt-12">
         <Carousel
           className="rounded-xl"
           prevArrow={({ handlePrev }) => (
