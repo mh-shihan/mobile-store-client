@@ -12,7 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const location = useLocation();
-  console.log("Location inside Login page", location);
+  // console.log("Location inside Login page", location);
 
   const handleLogin = (e) => {
     e.preventDefault();

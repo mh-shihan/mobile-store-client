@@ -4,13 +4,16 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+console.log(import.meta.env.VITE_name);
 const firebaseConfig = {
-  apiKey: "AIzaSyBVsKyna1dk3nA-J-tBeysSvPmJkyyxLSc",
-  authDomain: "mobile-store-86411.firebaseapp.com",
-  projectId: "mobile-store-86411",
-  storageBucket: "mobile-store-86411.appspot.com",
-  messagingSenderId: "1043636933800",
-  appId: "1:1043636933800:web:4e5145d3fd2d6aadac5e9d",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
+  measurementId: import.meta.env.VITE_measurementId,
 };
 
 // Initialize Firebase
