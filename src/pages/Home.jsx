@@ -21,9 +21,6 @@ const Home = () => {
           <Contact></Contact>
         </section>
       </main>
-      <footer className="mt-4 ">
-        <Footer></Footer>
-      </footer>
     </div>
   );
 };

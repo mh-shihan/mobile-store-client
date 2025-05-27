@@ -66,12 +66,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <button
-        onClick={logOut}
-        className="btn btn-accent btn-sm text-white bg-blue-600 border-blue-600"
-      >
-        Log Out
-      </button>
+      <Button btnText="Logout" onClick={logOut} />
     </div>
   );
 

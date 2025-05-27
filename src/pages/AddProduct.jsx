@@ -47,12 +47,12 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <div className="max-w-7xl mx-auto border border-t-transparent shadow-sm mb-10 mt-20  ">
+      <div className="max-w-7xl mx-auto  shadow-sm mb-10 mt-10  ">
         <h1 className="text-5xl font-extrabold my-10 text-center ">
           Add Product
         </h1>
         <form onSubmit={handleAddProduct} className="flex justify-center  ">
-          <div className="bg-[#F4F3F0] w-full md:w-3/4 rounded-xl  px-4 md:px-10 ">
+          <div className="bg-base-100 w-full md:w-3/4 rounded-xl  px-4 md:px-10 ">
             {/* Form Row of Name and Available Quantity  */}
             <div className="md:flex mb-0 md:mb-8">
               <div className="form-control w-full md:w-1/2">
@@ -116,7 +116,7 @@ const AddProduct = () => {
               </div>
             </div>
             {/* Form Row of Categories and Details  */}
-            <div className="md:flex bg-[#F4F3F0] mb-0 md:mb-8  ">
+            <div className="md:flex mb-0 md:mb-8  ">
               <div className="form-control md:w-1/2">
                 <label className="label">
                   <span className="label-text text-xl font-bold">Rating</span>
@@ -145,7 +145,7 @@ const AddProduct = () => {
               </div>
             </div>
             {/* Photo Url and Rating */}
-            <div className="md:flex bg-[#F4F3F0] mb-8">
+            <div className="md:flex mb-8">
               <div className="form-control w-full">
                 <label className="label">
                   <span className="label-text text-xl font-bold">Photo</span>
