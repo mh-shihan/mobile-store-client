@@ -80,8 +80,8 @@ const Registration = () => {
       });
   };
   return (
-    <div>
-      <div className="xl:hero bg-base-200 mt-20 ">
+    <div className="min-h-screen bg-base-200">
+      <div className="xl:hero ">
         <div className="hero-content xl:w-1/2 flex-col lg:flex-col">
           <div className="text-center lg:text-left">
             <h1 className="text-3xl xl:text-5xl font-bold text-blue-600 mt-6">
@@ -99,7 +99,7 @@ const Registration = () => {
                   ref={nameRef}
                   name="name"
                   placeholder="Name"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   required
                 />
               </div>
@@ -111,7 +111,7 @@ const Registration = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   required
                 />
               </div>
@@ -123,7 +123,7 @@ const Registration = () => {
                   type="text"
                   name="image_url"
                   placeholder="Image URL"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                 />
               </div>
               <div className="form-control">
@@ -139,21 +139,21 @@ const Registration = () => {
                     required
                   />
                   <span
-                    className="cursor-pointer absolute bottom-[37%] right-[3%]"
+                    className="cursor-pointer absolute bottom-[37%] right-[3%] z-10"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
                   </span>
                 </div>
               </div>
-              <div className="form-control mt-6">
-                <button className="btn bg-blue-600 text-white text-xl xl:text-2xl">
-                  Register
+              <div className="form-control mt-4 w-full">
+                <button className="btn btn-outline border-transparent w-full bg-blue-600 text-white text-2xl">
+                  Registration
                 </button>
               </div>
-              <p>
+              <p className="mt-2">
                 Already have account. Please{" "}
-                <Link className="text-blue-600" to="/login">
+                <Link className="text-blue-600 font-medium" to="/login">
                   Login
                 </Link>
               </p>
