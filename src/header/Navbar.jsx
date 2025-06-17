@@ -8,6 +8,15 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const { darkMode, lightMode, theme } = useContext(ThemeContext);
 
+  const handleLogout = () => {
+    console.log("Logging out...");
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   const navLinks = (
     <>
       <div className="cursor-pointer">
@@ -66,7 +75,7 @@ const Navbar = () => {
       </div>
 
       <button
-        onClick={logOut}
+        onClick={handleLogout}
         className="btn btn-accent btn-sm text-white bg-blue-600 border-blue-600"
       >
         Log Out

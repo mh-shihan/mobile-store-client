@@ -9,20 +9,32 @@ const Navbar = () => {
     () => localStorage.getItem("theme") || "light"
   );
 
-  const handleToggelTheme = (e) => {
+  // Handle theme toggle
+  const handleToggleTheme = (e) => {
     if (e.target.checked) {
       setTheme("dark");
     } else {
       setTheme("light");
     }
   };
+  // Handle logout
+  const handleLogout = () => {
+    console.log("Logging out...");
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
+  // Set the theme in localStorage and apply it to the document
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
 
+  // NavLinks for the Navbar
   const navLinks = (
     <>
       <li className="font-semibold text-lg">
@@ -40,6 +52,7 @@ const Navbar = () => {
     </>
   );
 
+  // Profile section for the Navbar
   const profile = (
     <div className="flex items-center gap-2">
       {/* <div className="bg-stone-300 p-2 rounded-lg shadow">
@@ -66,7 +79,12 @@ const Navbar = () => {
         </div>
       </div>
 
-      <Button btnText="Logout" onClick={logOut} />
+      <button
+        onClick={handleLogout}
+        className="btn  bg-blue-600 border-blue-600 text-white ml-2"
+      >
+        Logout
+      </button>
     </div>
   );
 
@@ -116,7 +134,7 @@ const Navbar = () => {
               type="checkbox"
               className="theme-controller"
               value={theme}
-              onChange={handleToggelTheme}
+              onChange={handleToggleTheme}
               checked={theme === "dark"}
             />
 
