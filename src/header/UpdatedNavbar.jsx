@@ -2,9 +2,11 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { useContext, useEffect, useState } from "react";
 import Button from "../components/Button";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [clickCount, setClickCount] = useState(0);
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "light"
   );
@@ -17,14 +19,64 @@ const Navbar = () => {
       setTheme("light");
     }
   };
+
   // Handle logout
   const handleLogout = () => {
-    console.log("Logging out...");
-    logOut()
-      .then(() => {})
-      .catch((error) => {
-        console.log(error.message);
-      });
+    setClickCount((prevCount) => prevCount + 1);
+    if (clickCount < 1) {
+      toast(
+        (t) => (
+          <span>
+            Are you sure you want to logout?
+            <div
+              style={{
+                marginTop: 8,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 8,
+              }}
+            >
+              <button
+                className="btn btn-sm btn-error text-white"
+                onClick={() => {
+                  setClickCount(0); // Reset click count
+                  // Call the logOut function from AuthContext
+                  logOut()
+                    .then(() => {
+                      toast.dismiss(t.id);
+                      toast.success("Logged out successfully!");
+                    })
+                    .catch((error) => {
+                      toast.dismiss(t.id);
+                      toast.error("Logout failed!");
+                      console.log(error.message);
+                    });
+                }}
+              >
+                Yes
+              </button>
+              <button
+                className="btn btn-sm btn-ghost bg-gray-900 hover:bg-blue-gray-900 hover:text-white hover:border-transparent text-white  "
+                onClick={() => {
+                  setClickCount(0); // Reset click count
+                  toast.dismiss(t.id);
+                }}
+              >
+                Cancel
+              </button>
+            </div>
+          </span>
+        ),
+        {
+          style: {
+            background: "#2863eb", // Change to your preferred color (e.g., Tailwind blue-600)
+            color: "#fff",
+          },
+          // duration: 10000,
+        }
+      );
+    }
   };
 
   // Set the theme in localStorage and apply it to the document
